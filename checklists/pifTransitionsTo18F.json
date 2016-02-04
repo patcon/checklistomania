@@ -1,0 +1,65 @@
+{"checklistName": "PIF transition to 18F",
+"checklistDescription": "TODO Items for PIF transfer to 18F.",
+"items": 
+	{"dayZero": { 
+		"displayName": "Date that PIF decides to Transition", 
+		"description": "Date that PIF decides to transition (9th or 10th month).",
+		"daysToComplete": 0, 
+		"dependsOn": []
+	},
+	"pifConveysInterest": { 
+		"displayName": "PIF talks to director.", 
+		"description": "PIF takes to director of team they would like to join in their 9th or 10th month.",
+		"daysToComplete": 0, 
+		"dependsOn": ["dayZero"]
+	},
+	"sqaLetterForPIF": { 
+		"displayName": "Nathan fills out SQA Letter if necessary and sends to Talent Team", 
+		"description": "",
+		"daysToComplete": 0, 
+		"dependsOn": ["dayZero"]
+	},
+	"conveyInformationToTalent": { 
+		"displayName": "Conveys location information to Talent POC", 
+		"description": "Nathan will inform the talent team and the correct POC as soon as they're official.",
+		"daysToComplete": 0, 
+		"dependsOn": ["dayZero"]
+	},
+	"pifBecomesOfficial": { 
+		"displayName": "PIF Becomes official and has start date", 
+		"description": "",
+		"daysToComplete": 0, 
+		"dependsOn": ["dayZero"]
+	},
+	"addToRoster": { 
+		"displayName": "Add PIF to roster", 
+		"description": "Talent adds PIF to 18F roster.",
+		"daysToComplete": 60, 
+		"dependsOn": ["pifBecomesOfficial"]
+	},
+	"informsOpsAnd18F": { 
+		"displayName": "Talent comms", 
+		"description": "Talent notifies Ops about the new hire and lets #newsletter know for official inclusion in the 18F internal newsletter.",
+		"daysToComplete": 40, 
+		"dependsOn": ["pifBecomesOfficial"]
+	},
+	"pifStarts": { 
+		"displayName": "PIF starts", 
+		"description": "",
+		"daysToComplete": 60, 
+		"dependsOn": ["pifBecomesOfficial"]
+	},
+	"addToPIFListserv": { 
+		"displayName": "Add to PIF listservs + 18F listservs", 
+		"description": "Nathan will add new PIFs to the PIF listserv and Shawnique will add new hires to the 18F Listserv.",
+		"daysToComplete": 61, 
+		"dependsOn": ["pifStarts"]
+	},
+	"followNewHireChecklist": { 
+		"displayName": "Follow Talent's new hire checklist for additional steps", 
+		"description": "",
+		"daysToComplete": 61, 
+		"dependsOn": ["pifStarts"]
+	}
+}
+}
