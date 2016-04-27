@@ -73,7 +73,7 @@ var getApp = function(passport, GitHubStrategy, github) {
               function(err, orgs) {
                   var inOrg = false;
                     orgs.forEach(function(org) {
-                      if(org.login == '18F'){
+                      if(org.login == 'CivicTechTO'){
                         inOrg = true;
                       }
                     });
