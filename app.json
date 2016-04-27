@@ -1,0 +1,23 @@
+{
+  "name": "Checklistomania",
+  "description": "Centrally managed todo lists for complex processes - onboarding, offboarding, management changes, etc.",
+  "keywords": [
+    "18f",
+    "lists"
+  ],
+  "addons": [
+    "mongolab:sandbox"
+  ],
+  "env": {
+    "GITHUB_CLIENT_ID": {
+      "required": true
+    },
+    "GITHUB_CLIENT_SECRET": {
+      "required": true
+    },
+    "SESSION_SECRET": {
+      "required": true,
+      "generator": "secret"
+    }
+  }
+}
