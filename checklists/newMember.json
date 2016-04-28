@@ -1,0 +1,41 @@
+{
+  "checklistName": "New Member Checklist",
+  "checklistDescription": "TODO items for all new Civic Tech Toronto members.",
+  "items": {
+    "dayZero": {
+      "displayName": "Start Date",
+      "description": "First night at a meetup",
+      "daysToComplete": 0,
+      "dependsOn": []
+    },
+    "githubAccount": {
+      "displayName": "Create a GitHub account",
+      "description": "Signup page is <a href='https://github.com/'>here</a>.",
+      "dependsOn": ["dayZero"]
+    },
+    "slackAccount": {
+      "displayName": "Join our Slack team",
+      "description": "Invite form is <a href='https://civictechto-slack-invite.herokuapp.com/'>here</a>.",
+      "dependsOn": ["dayZero"]
+    },
+    "meetupAccount": {
+      "displayName": "Create a Meetup account",
+      "description": "Signup page is <a href='https://secure.meetup.com/register/'>here</a>.",
+      "dependsOn": ["dayZero"]
+    },
+    "meetupJoinGroup": {
+      "displayName": "Join our Meetup group",
+      "description": "Civic Tech Toronto group is <a href='http://www.meetup.com/Civic-Tech-Toronto/'>here</a>.",
+      "dependsOn": ["meetupAccount"]
+    },
+    "meetupAttend": {
+      "displayName": "Mark yourself as attending today's event",
+      "description": "Doing this for future events helps us order enough food and track growth. Yay metrics!",
+      "dependsOn": ["meetupJoinGroup"]
+    },
+    "civictech101":{
+      "displayName": "Participate in Civic Tech 101",
+      "dependsOn": []
+    }
+  }
+}
