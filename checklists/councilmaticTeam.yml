@@ -1,0 +1,38 @@
+checklistName: Councilmatic Team Member
+checklistDescription: TODO items for new members of Councilmatic team.
+items:
+  dayZero:
+    displayName: Start Date
+    description: First day on the team.
+    daysToComplete: 0
+    dependsOn: []
+  slackChannel:
+    displayName: 'Join #toronto-councilmatic'
+    description: This is where we do all the real-time discussion of the project.
+    daysToComplete": 0
+    dependsOn:
+      - dayZero
+  googleDrive:
+    displayName: Get invited to Google Drive folder
+    description: Make sure one of the project leads adds you.
+    daysToComplete: 0
+    dependsOn:
+      - dayZero
+  specialization:
+    prompt: Which area would you like to specialize?
+    displayType: checkbox
+    possibleResponses:
+      - text: Front-End Development
+        items:
+          devEnvironment:
+            displayName: Set up a local development environment.
+            daysToComplete: 7
+            dependsOn:
+              - dayZero
+      - text: User Testing
+        items:
+          serviceAccount:
+            displayName: 'Approver: Kaitlin'
+            daysToComplete: 7
+            dependsOn:
+              - dayZero

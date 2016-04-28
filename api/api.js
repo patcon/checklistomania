@@ -2,6 +2,7 @@ var express = require('express');
 var MongoClient = require('mongodb').MongoClient;
 var mkdirp = require('mkdirp');
 var fs = require('fs');
+var yaml = require('js-yaml');
 var github;
 
 var url;
@@ -27,11 +28,21 @@ MongoClient.connect(url, function(err, db) {
 	fs.readdir('./checklists', function(err, files) {
 		files.forEach(function(fileName) {
 	  var filePath = 'checklists/' + fileName;
-	  fs.readFile(filePath, 'utf8',
-	  	function(err, data) {
-	  		checklist = JSON.parse(data);
-	  		checklists.insert(checklist);
-	  	});		
+    var filetype = filePath.match(/.+?\.(.+?)$/)[1];
+    switch(filetype) {
+      case 'json':
+        fs.readFile(filePath, 'utf8',
+          function(err, data) {
+            checklist = JSON.parse(data);
+            checklists.insert(checklist);
+          });		
+      case 'yml':
+        fs.readFile(filePath, 'utf8',
+          function(err, data) {
+            checklist = yaml.load(data);
+            checklists.insert(checklist);
+          });		
+    };
 		});
 	});
 });
@@ -45,6 +56,16 @@ router.get('/', function(req, res) {
 router.get('/isalive', function (req, res) {
   res.send('OK');
 });
+
+function loadChecklist(filePath) {
+  var filetype = filePath.match(/.+?\.(.+?)$/)[1];
+  switch(filetype) {
+    case 'json':
+      return JSON.parse(data)
+    case 'yml':
+      return yaml.load(data)
+  }
+}
 
 function addChildrenToChecklist(checklist) {
 	Object.keys(checklist.items).forEach(function(itemId) {checklist.items[itemId].children = []});
