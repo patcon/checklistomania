@@ -36,12 +36,14 @@ MongoClient.connect(url, function(err, db) {
             checklist = JSON.parse(data);
             checklists.insert(checklist);
           });		
+          break;
       case 'yml':
         fs.readFile(filePath, 'utf8',
           function(err, data) {
             checklist = yaml.load(data);
             checklists.insert(checklist);
           });		
+          break;
     };
 		});
 	});
