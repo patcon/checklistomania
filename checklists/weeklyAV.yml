@@ -1,0 +1,22 @@
+default_item: &default_item
+  displayName: ''
+  description: ''
+  daysToComplete: 0
+  dependsOn:
+    - dayZero
+
+checklistName: Weekly AV Setup
+checklistDescription: TODO items for the AV role to complete each week.
+items:
+  dayZero:
+    displayName: Placeholder
+  projector:
+    displayName: Set up projector for presenter(s)
+  wifi:
+    displayName: Post WiFi credentials
+    description: Posting them somewhere physical works best.
+  record:
+    displayName: Record the presentation
+  thisWeek:
+    displayName: Review CfA's 'This Week in Civic Tech'
+    description: The slide is available <a href='http://c4a.me/thisweekincivictech'>here</a>.
