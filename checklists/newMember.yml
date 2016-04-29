@@ -1,43 +1,57 @@
+default_item: &default_item
+  displayName: ''
+  description: ''
+  daysToComplete: 0
+  dependsOn:
+    - dayZero
+
 checklistName: '*New Civic Tech Toronto Member'
 checklistDescription: TODO items for all new Civic Tech Toronto members.
 items:
   dayZero:
+    <<: *default_item
     displayName: Start Date
     description: First night at a meetup
-    daysToComplete: 0
     dependsOn: []
   githubAccount:
+    <<: *default_item
     displayName: Create a GitHub account
     description: Signup page is <a href='https://github.com/'>here</a>.
-    daysToComplete: 0
-    dependsOn:
-      - dayZero
   slackAccount:
+    <<: *default_item
     displayName: Join our Slack team
     description: Invite form is <a href='https://civictechto-slack-invite.herokuapp.com/'>here</a>.
-    daysToComplete: 0
-    dependsOn:
-      - dayZero
   meetupAccount:
+    <<: *default_item
     displayName: Create a Meetup account
     description: Signup page is <a href='https://secure.meetup.com/register/'>here</a>.
-    daysToComplete: 0
-    dependsOn:
-      - dayZero
   meetupJoinGroup:
+    <<: *default_item
     displayName: Join our Meetup group
     description: Civic Tech Toronto group is <a href='http://www.meetup.com/Civic-Tech-Toronto/'>here</a>.
-    daysToComplete: 0
     dependsOn:
       - meetupAccount
   meetupAttend:
+    <<: *default_item
     displayName: Mark yourself as attending today's event
     description: Doing this for future events helps us order enough food and track growth. Yay metrics!
-    daysToComplete: 0
     dependsOn:
       - meetupJoinGroup
   civictech101:
+    <<: *default_item
     displayName: Participate in Civic Tech 101
     description: This should help you get oriented with how we work!
-    daysToComplete: 0
-    dependsOn: []
+  surveyFirstTime:
+    <<: *default_item
+    displayName: Complete first-timer survey
+    description: Check <a href='https://google.com'>this</a> out after your <strong>first</strong> hack night.
+    daysToComplete: 7
+    dependsOn:
+      - civictech101
+  surveyRepeat:
+    <<: *default_item
+    displayName: Complete returning member survey
+    description: Check <a href='https://google.com'>this</a> out after your <strong>third</strong> hack night.
+    daysToComplete: 28
+    dependsOn:
+      - surveyFirstTime
