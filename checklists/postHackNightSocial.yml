@@ -1,0 +1,31 @@
+default_item: &default_item
+  displayName: ''
+  description: ''
+  daysToComplete: 0
+  dependsOn:
+    - dayZero
+
+checklistName: Weekly Post-Hacknight social
+checklistDescription: TODO items for the person co-ordinating the post-game social.
+items:
+  dayZero:
+    <<: *default_item
+    displayName: Placeholder
+  research:
+    <<: *default_item
+    displayName: Research bars near venue
+    description: Make sure it's listed as accessible on <a href='accessnow.me/map'>AccessNow</a>!
+  announce:
+    <<: *default_item
+    displayName: Make an announcement
+    description: >
+      During the designated announcement slot, make sure to let people know
+      about after-plans. That way, people can coordinate as needed to be able
+      to attend.
+    dependsOn:
+      - research
+  rally:
+    displayName: Be the pied piper.
+    description: Work with the venue coordinator to get everyone out on time, without leaving anyone behind.
+    dependsOn:
+      - announce
