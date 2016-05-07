@@ -17,7 +17,17 @@ items:
     <<: *default_item
     displayName: 'Join #toronto-councilmatic'
     description: This is where we do all the real-time discussion of the project.
-  googleDrive:
+  contributingDoc:
+    <<: *default_item
+    displayName: Read up on contributor docs
+    description: Our <a href='https://github.com/civictechto/tor-councilmatic/tree/master/CONTRIBUTING.md'>"CONTRIBUTING.md"</a> doc explains how we work.
+  accessGitHubTeam:
+    <<: *default_item
+    displayName: Get invited to GitHub Councilmatic team
+    description: This will give you full write-access.
+    dependsOn:
+      - contributingDoc
+  accessGDrive:
     <<: *default_item
     displayName: Get invited to Google Drive folder
     description: Make sure one of the project leads adds you.

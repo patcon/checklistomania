@@ -73,7 +73,7 @@ var getApp = function(passport, GitHubStrategy, github) {
               function(err, orgs) {
                   var inOrg = false;
                     orgs.forEach(function(org) {
-                      if(org.login == 'CivicTechTO'){
+                      if(org.login == process.env.GITHUB_TEAM_SLUG){
                         inOrg = true;
                       }
                     });
