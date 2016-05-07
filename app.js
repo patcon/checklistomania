@@ -69,18 +69,12 @@ var getApp = function(passport, GitHubStrategy, github) {
       function(err, user) {
           if(user) {next()}
           else {
-            github.orgs.getFromUser({user: req.user.username}, 
-              function(err, orgs) {
-                  var inOrg = false;
-                    orgs.forEach(function(org) {
-                      if(org.login == process.env.GITHUB_TEAM_SLUG){
-                        inOrg = true;
-                      }
-                    });
-                  if(inOrg) {next();}
+            github_priv.orgs.getMember({user: req.user.username, org: process.env.GITHUB_TEAM_SLUG},
+              function(err, member) {
+                  if(member) {next();}
                   else {res.redirect('/not-authorized.html');}
               });
-          }; 
+          };
   });
   }
 
@@ -106,6 +100,7 @@ module.exports['getApp'] = getApp;
 var passport = require('passport');
 var GitHubStrategy = require('passport-github2').Strategy;
 var github = require('./api/github.js').github;
+var github_priv = require('./api/github.js').github_priv;
 
 if (require.main === module) {
   var app = getApp(passport, GitHubStrategy, github);
