@@ -10,7 +10,8 @@ checklistDescription: TODO items for the person co-ordinating the post-game soci
 items:
   dayZero:
     <<: *default_item
-    displayName: Placeholder
+    displayName: Event Date
+    dependsOn: []
   research:
     <<: *default_item
     displayName: Research bars near venue

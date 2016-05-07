@@ -5,8 +5,8 @@ default_item: &default_item
   dependsOn:
     - dayZero
 
-checklistName: Weekly AV Setup
-checklistDescription: TODO items for the AV role to complete each week.
+checklistName: Weekly - Venue Support Role
+checklistDescription: "Weekly TODO items for the 'Venue Support' role."
 items:
   dayZero:
     <<: *default_item
