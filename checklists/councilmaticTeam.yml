@@ -17,8 +17,6 @@ items:
     <<: *default_item
     displayName: 'Join #toronto-councilmatic Slack channel'
     description: This is where we do all the real-time discussion of the project.
-    dependsOn:
-      - slackAccount
   contributingDoc:
     <<: *default_item
     displayName: Read up on contributor docs
