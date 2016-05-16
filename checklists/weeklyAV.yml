@@ -26,3 +26,7 @@ items:
     <<: *default_item
     displayName: Review CfA's 'This Week in Civic Tech'
     description: The slide is available <a href='http://c4a.me/thisweekincivictech'>here</a>.
+  dropCanvas:
+    <<: *default_item
+    displayName: Ensure our DropCanvas works
+    description: This allows people to easily share images onto projector screen. (shortlink: <a href='https://bit.ly/ctto-screen'>bit.ly/ctto-screen</a>)
