@@ -29,4 +29,4 @@ items:
   dropCanvas:
     <<: *default_item
     displayName: Ensure our DropCanvas works
-    description: This allows people to easily share images onto projector screen. (shortlink: <a href='https://bit.ly/ctto-screen'>bit.ly/ctto-screen</a>)
+    description: This allows people to easily share images onto projector screen. (shortlink: <a href='https://bit.ly/ctto-canvas'>bit.ly/ctto-canvas</a>)
